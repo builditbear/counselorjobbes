@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+	    <pattern>CAREERQUIZ</pattern>
+        <template>
+            <think><set name="topic">careerquiz</set></think>
+            Alrighty then. I'll ask a series of questions, and you merely need
+            to answer them with "yes" or "no".
+            <br/>
+            Do you enjoy writing programs in your freetime?
+        </template>
+    </category>
+        
+    <topic name = "careerquiz">
+        <category>
+            <pattern>YES</pattern>
+            <that>DO YOU ENJOY WRITING PROGRAMS IN YOUR FREETIME</that>
+            <template>
+                <link>
+                    <text>
+                        Consider a career in software engineering! 
+                        Follow this link to learn more.
+                    </text>
+                    <url>https://www.onetonline.org/link/summary/15-1252.00</url>
+                </link>
+            </template>
+        </category>
+            
+        <category>
+            <pattern>NO</pattern>
+            <that>DO YOU ENJOY WRITING PROGRAMS IN YOUR FREETIME</that>
+            <template>
+                Does the idea of researching and developing cutting edge
+                computer technologies excite you?
+            </template>
+        </category>
+            
+        <category>
+            <pattern>YES</pattern>
+            <THAT>
+                DOES THE IDEA OF RESEARCHING AND DEVELOPING CUTTING EDGE 
+                COMPUTER TECHNOLOGIES EXCITE YOU
+            </THAT>
+            <template>
+                <link>
+                    <text>Me too. Consider a career in computer science research!</text>
+                    <url>https://www.onetonline.org/link/summary/15-1221.00</url>
+                </link>
+            </template>
+        </category>
+            
+        <category>
+            <pattern>NO</pattern>
+            <that>
+                DOES THE IDEA OF RESEARCHING AND DEVELOPING CUTTING EDGE 
+                COMPUTER TECHNOLOGIES EXCITE YOU
+            </that>
+            <template>Does the idea of maintaining computer systems interest you?</template>
+        </category>
+            
+        <category>
+            <pattern>YES</pattern>
+            <that>DOES THE IDEA OF MAINTAINING COMPUTER SYSTEMS INTEREST YOU</that>
+            <template>
+                <link>
+                    <text>Consider a career in system administration!</text>
+                    <url>https://www.onetonline.org/link/summary/15-1244.00</url>
+                </link>
+            </template>
+        </category>
+            
+        <category>
+            <pattern>NO</pattern>
+            <that>DOES THE IDEA OF MAINTAINING COMPUTER SYSTEMS INTEREST YOU</that>
+            <template>Would you enjoy analyzing data to make predictions based on trends?</template>
+        </category>
+            
+        <category>
+            <pattern>YES</pattern>
+            <that>WOULD YOU ENJOY ANALYZING DATA TO MAKE PREDICTIONS BASED ON TRENDS</that>
+            <template>
+                <link>
+                    <text>Consider a career as a data scientist!</text>
+                    <url>https://www.onetonline.org/link/summary/15-2051.00</url>
+                </link>
+            </template>
+        </category>
+            
+        <category>
+            <pattern>NO</pattern>
+            <that>WOULD YOU ENJOY ANALYZING DATA TO MAKE PREDICTIONS BASED ON TRENDS</that>
+            <template>
+                Would you like to pass on what you've learned to the next
+                generation of computer scientists?
+            </template>
+        </category>
+            
+        <category>
+            <pattern>YES</pattern>
+            <that>
+                WOULD YOU LIKE TO PASS ON WHAT YOU'VE LEARNED TO THE NEXT
+                GENERATION OF COMPUTER SCIENTISTS
+            </that>
+            <template>
+                <link>
+                    <text>Consider a career as a computer science professor!</text>
+                    <url>https://www.onetonline.org/link/summary/25-1021.00</url>
+                </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>NO</pattern>
+            <template>
+                Wow. Well you better consider another career path
+                because it sounds like you're in the wrong place... just kidding!
+                <br/>
+                <br/>
+                I'm only programmed with info regarding a very small subset
+                of all CS jobs - just five to be exact! You should search a
+                job board such as O*NET online for other jobs in CS that might
+                suit you and your preferences. CS is an extremely broad field
+                with something for everyone, so don't be discouraged if your
+                dream job isn't readily apparent at first. Best of luck!
+            </template>
+        </category>
+    </topic>
+</aiml>

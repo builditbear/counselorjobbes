@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <!-- Responding to user greeting or opening statement, or variations. -->
+	<category>
+	    <pattern>HELLO</pattern>
+	    <template>
+	        Hello! My name is Jobbes.
+	        Who do I have the pleasure of counseling today?
+	    </template>
+    </category>
+    
+    <category>
+        <pattern>HELLO *</pattern>
+        <template>Hello! Who do I have the pleasure of counseling today?</template>
+    </category>
+    
+    <category>
+        <pattern>HELLO, *</pattern>
+        <template><srai>HELLO <star/></srai></template>
+    </category>
+    
+    <category>
+        <pattern>HI I AM *</pattern>
+        <template><srai>MY NAME IS <star/></srai></template>
+    </category>
+    
+    <category>
+        <pattern>*</pattern>
+        <that>WHO DO I HAVE THE PLEASURE OF COUNSELING TODAY</that>
+        <template><srai>My name is <star/></srai></template>
+    </category>
+    
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            Ahh, well it's delightful to meet you, <set name="name"><formal><star/></formal></set>!
+            Would you like to explore some viable career options based on your aptitudes and preferences?
+            <button>
+                <text>Of course!</text>
+                <postback>YES2ADVICE</postback>
+            </button>
+            <button>
+                <text>No, I'd rather make an appointment with a real counselor.</text>
+                <postback>NO2ADVICE</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>YES2ADVICE</pattern>
+        <template>
+            Excellent! Let's get started.
+            Perhaps we could have a brief discussion of your career preferences 
+            and interests. Alternatively, I can administer a brief career
+            aptitude quiz that will generate a career suggestion. Which would
+            you like?
+            
+            <button>
+                <text>I'd like to chat about jobs.</text>
+                <postback>JOBCHAT</postback>
+            </button>
+            
+            <button>
+                <text>I'd like to take the career quiz.</text>
+                <postback>CAREERQUIZ</postback>
+            </button>
+        </template>
+    </category>
+    
+
+    
+    <category>
+        <pattern>NO2ADVICE</pattern>
+        <template>
+            Aw. Well, I'm sorry I couldn't help you, but I understand.
+            Feel free to reach out for in person counseling using the info found here:
+            <link>
+                <text>WGU Student Support Contact Info</text>
+                <url>https://my.wgu.edu/student-support/contact-wgu</url>
+            </link>
+        </template>
+    </category>
+</aiml>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>JOBCHAT</pattern>
+        <template>
+            Okay. Are there any careers you're already familiar with or interested in?
+            <think><set name="topic">cscareers</set></think>
+        </template>
+    </category>
+	<!-- Categories governing discussion on potential careers in computer science. -->
+	<topic name="cscareers">
+	    <!-- Offering guidance based on no pre-existing preference or knowledge. -->
+	    <category>
+	        <pattern>NO</pattern>
+	        <template>
+	            That's alright. There's such a wide variety of exciting and
+	            lucrative opportunities in CS. Which is great, but can make
+	            finding where to start a little intimidating! No worries.
+	            Tell me a bit about what you're looking for in a job.
+	        </template>
+        </category>
+        
+        <category>
+            <pattern>_ SOFTWARE *</pattern>
+            <that>TELL ME A BIT ABOUT WHAT YOU ARE LOOKING FOR IN A JOB</that>
+            <template>
+                Ahhh, a very common choice, but rightly so, and there's so much
+                variety within the profession!
+                <br/>
+                If you'd like the opportunity to solve real world problems through
+                designing software based solutions that implement the principles
+                you're learning in your CS degree, you should read into Software
+                Engineering and Development.
+                <br/>
+                <link>
+                    <text>Here's some more info to get you started</text>
+                    <url>https://www.onetonline.org/link/summary/15-1252.00</url>
+                </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>_ PROFESSORING *</pattern>
+            <that>TELL ME A BIT ABOUT WHAT YOU ARE LOOKING FOR IN A JOB</that>
+            <template><srai>I WANT A JOB WHERE TEACHING IS INVOLVED</srai></template>
+        </category>
+        
+        <category>
+            <pattern>_ TEACHING *</pattern>
+            <that>TELL ME A BIT ABOUT WHAT YOU ARE LOOKING FOR IN A JOB</that>
+            <template>
+                If you're after a career in teaching, read up on being a
+                Computer Science Professor!
+                <link>
+                    <text>Check out some more in depth info here.</text>
+                    <url>https://www.onetonline.org/link/summary/25-1021.00</url>
+                </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>_ RESEARCH *</pattern>
+            <that>TELL ME A BIT ABOUT WHAT YOU ARE LOOKING FOR IN A JOB</that>
+            <template>
+                If you're interested in applying analysis and reasoning to
+                develop new computer technologies and devise solutions to both
+                abstract and functional problems in CS, maybe you should look
+                into being a Computer Scientist Researcher or Development Scientist!
+                <link>
+                    <text>Learn more about being a computer pioneer here!</text>
+                    <url>https://www.onetonline.org/link/summary/15-1221.00</url>
+                </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>_ ADMINISTRATION *</pattern>
+            <that>TELL ME A BIT ABOUT WHAT YOU ARE LOOKING FOR IN A JOB</that>
+            <template>
+                If the idea of designing, securing, and maintaining computers
+                at both an individual and large-scale level appeals to you, 
+                you're in luck! Companies are always hiring System Admins, 
+                Network Architects, IT Security personnel, and more...
+                <link>
+                    <text>
+                        Learn more about these and similar jobs here.
+                    </text>
+                    <url>https://www.onetonline.org/link/summary/15-1244.00</url>
+                </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>_ DATA SCIENCE *</pattern>
+            <that>TELL ME A BIT ABOUT WHAT YOU ARE LOOKING FOR IN A JOB</that>
+            <template>
+                For those of us with a love for statistics and raw data, just
+                begging to be sorted and analyzed, a job as a data scientist might
+                be just what the doctor ordered!
+                <link>
+                    <text>Learn more about jobs in data science here.</text>
+                    <url>https://www.onetonline.org/link/summary/15-2051.00</url>
+                </link>
+            </template>
+        </category>
+
+        <!-- Similar guidance for students who already have some knowledge of
+             on or more cs careers. -->
+        <category>
+            <pattern>YES</pattern>
+            <template>
+                Oh, good! What career are you interested in then?
+            </template>
+        </category>
+        
+        <category>
+            <pattern>I AM INTERESTED IN <set>careers</set></pattern>
+            <template>
+                I see. That sounds like an excellent choice. But does that career, 
+                or other like it in CS suit your expectations, I wonder? Tell me a bit
+                about what you're looking for in a job.
+            </template>
+        </category>
+        
+        <category>
+            <pattern><set>careers</set></pattern>
+            <template><srai>I AM INTERESTED IN <star/></srai></template>
+        </category>
+        
+        <category>
+            <pattern>I AM INTERESTED IN *</pattern>
+            <template>
+                I'm sorry - I haven't been programmed with any knowledge concerning that career in my database.
+            </template>
+        </category>
+	</topic>
+</aiml>
